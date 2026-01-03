@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BibliotecaV2.Entities
+﻿namespace BibliotecaV2
 {
-    internal class Usuario
+    class Usuario
     {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public int Idade { get; set; }
+
+        public Usuario()
+        {
+
+        }
+        public Usuario(string nome, int idade)
+        {
+            Nome = nome;
+            Idade = idade;
+        }
+
+        public override string ToString()
+        {
+            return "["+Id+"] " +  Nome + ", " + Idade + " anos";
+        }
     }
 }
