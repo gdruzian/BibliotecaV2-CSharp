@@ -1,4 +1,4 @@
-﻿namespace BibliotecaV2
+﻿namespace Entities
 {
     class Usuario
     {
@@ -18,7 +18,7 @@
 
         public override string ToString()
         {
-            return "["+Id+"] " +  Nome + ", " + Idade + " anos";
+            return "[" + Id + "] " + Nome + ", " + Idade + " anos";
         }
     }
 }

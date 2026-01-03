@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace BibliotecaV2
+namespace Entities
 {
     class Emprestimo
     {

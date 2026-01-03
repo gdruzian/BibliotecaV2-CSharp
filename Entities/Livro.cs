@@ -1,4 +1,4 @@
-﻿namespace BibliotecaV2
+﻿namespace Entities
 {
     class Livro
     {
