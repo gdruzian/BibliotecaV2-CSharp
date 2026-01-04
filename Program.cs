@@ -6,7 +6,14 @@ namespace BibliotecaV2
     {
         static void Main(string[] args)
         {
-            
+            try
+            {
+                Tela.TelaInicio();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine();
+            }
         }
     }
 }
