@@ -5,9 +5,9 @@ namespace EDB
 {
     class LivroDB
     {
-        private string stringConnection = "Server=localhost;Database=biblioteca;Uid=root;Pwd=;";
+        private static string stringConnection = "Server=localhost;Database=biblioteca;Uid=root;Pwd=;";
 
-        public void CadastrarLivro(Livro livro)
+        public static void CadastrarLivro(Livro livro)
         {
             try
             {
@@ -33,11 +33,12 @@ namespace EDB
             }
         }
 
-        public void ListarLivros()
+        public static void ListarLivros()
         {
             try
             {
-                using(MySqlConnection connection = new MySqlConnection(stringConnection))
+
+                using (MySqlConnection connection = new MySqlConnection(stringConnection))
                 {
                     connection.Open();
 

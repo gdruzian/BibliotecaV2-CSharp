@@ -5,9 +5,9 @@ namespace EDB
 {
     class UsuarioDB
     {
-        private string stringConnection = "Server=localhost;Database=biblioteca;Uid=root;Pwd=;";
+        private static string stringConnection = "Server=localhost;Database=biblioteca;Uid=root;Pwd=;";
 
-        public void AdicionarUsuario(Usuario usuario)
+        public static void AdicionarUsuario(Usuario usuario)
         {
             try
             {
@@ -33,11 +33,11 @@ namespace EDB
             }
         }
 
-        public void ListarUsuarios()
+        public static void ListarUsuarios()
         {
             try
             {
-                using(MySqlConnection connection = new MySqlConnection(stringConnection))
+                using (MySqlConnection connection = new MySqlConnection(stringConnection))
                 {
                     connection.Open();
 

@@ -1,19 +1,29 @@
-﻿using MySql.Data.MySqlClient;
-
-namespace BibliotecaV2
+﻿namespace BibliotecaV2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            try
+
+            string opcao = "10";
+
+            do
             {
-                Tela.TelaInicio();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine();
-            }
+                try
+                {
+                    Tela.TelaInicio();
+
+                    opcao = Console.ReadLine();
+
+                    Tela.Opcao(opcao);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Erro: " + e.Message);
+                    Console.WriteLine("Pressione enter para voltar");
+                    Console.ReadLine();
+                }
+            } while (opcao != "0");
         }
     }
 }

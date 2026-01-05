@@ -7,9 +7,9 @@ namespace EDB
 {
     class EmprestimoDB
     {
-        private string stringConnection = "Server=localhost;Database=biblioteca;Uid=root;Pwd=;";
+        private static string stringConnection = "Server=localhost;Database=biblioteca;Uid=root;Pwd=;";
 
-        public bool LivroDisponivel(int idlivro)
+        public static bool LivroDisponivel(int idlivro)
         {
 
             try
@@ -43,7 +43,7 @@ namespace EDB
                 return false;
             }
         }
-        public void FazerEmprestimo(int idLivro, int idUsuario)
+        public static void FazerEmprestimo(int idLivro, int idUsuario)
         {
             if (!LivroDisponivel(idLivro))
             {
@@ -76,11 +76,11 @@ namespace EDB
             }
         }
         
-        public void DevolverLivro(int idlivro)
+        public static void DevolverLivro(int idlivro)
         {
             try 
             {
-                using(MySqlConnection connection = new MySqlConnection(stringConnection))
+                using (MySqlConnection connection = new MySqlConnection(stringConnection))
                 {
                     connection.Open();
 
@@ -91,7 +91,16 @@ namespace EDB
                         comando.Parameters.AddWithValue("@DATETIME", DateTime.Now);
                         comando.Parameters.AddWithValue("@IDLIVRO", idlivro);
 
-                        comando.ExecuteNonQuery();
+                        int linhas = comando.ExecuteNonQuery();
+
+                        if(linhas > 0)
+                        {
+                            Console.WriteLine("Livro devolvido!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Não foi possivel devolver o livro!");
+                        }
                     }
                 }
             }
@@ -101,11 +110,12 @@ namespace EDB
             }
         }
 
-        public void ListarEmprestimos()
+        public static void ListarEmprestimos()
         {
             try
             {
-                using(MySqlConnection connection = new MySqlConnection(stringConnection))
+
+                using (MySqlConnection connection = new MySqlConnection(stringConnection))
                 {
                     connection.Open();
 
@@ -135,7 +145,5 @@ namespace EDB
                 Console.WriteLine("Erro: " + e.Message);
             }
         }
-
-
     }
 }
