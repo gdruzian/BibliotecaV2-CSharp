@@ -15,7 +15,7 @@ O sistema controla o fluxo de usuários, acervo de livros e realiza empréstimos
 ## 📸 Demonstração
 
 <div align="center">
-  <img src="URL_DA_TUA_IMAGEM_AQUI" alt="Demonstração do Menu" width="600">
+  <img src="https://github.com/user-attachments/assets/81e774cc-bc6d-4da8-98bb-21211a7c722a" alt="Demonstração do Menu" width="600">
 </div>
 
 ## ✨ Funcionalidades
