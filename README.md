@@ -45,4 +45,4 @@ Certifique-se de ter o **.NET SDK** e o **MySQL Server** instalados.
 
 1. **Clone o repositório**
    ```bash
-   git clone [https://github.com/gdruzian/BibliotecaV2-CSharp.git](https://github.com/gdruzian/BibliotecaV2L-CSharp.git)
+   git clone https://github.com/gdruzian/Bibliotecav2-CSharp.git
