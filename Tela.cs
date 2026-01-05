@@ -27,6 +27,7 @@ namespace BibliotecaV2
             switch (n)
             {
                 case "0":
+                    Console.WriteLine("Finalizando o programa...");
                     return;
                 case "1":
                     TelaCadastrarUsuario();
